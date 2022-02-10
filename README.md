@@ -24,7 +24,7 @@ Add the code necessary in `index.js` and `api/server.js` to create a Web API and
 
 | Method | URL            | Description                                                                                            |
 | ------ | -------------- | ------------------------------------------------------------------------------------------------------ |
-| POST   | /api/users     | Creates a user using the information sent inside the `request body`.                                   |
+| POST   |     | Creates a user using the information sent inside the `request body`.                                   |
 | GET    | /api/users     | Returns an array users.                                                                                |
 | GET    | /api/users/:id | Returns the user object with the specified `id`.                                                       |
 | DELETE | /api/users/:id | Removes the user with the specified `id` and returns the deleted user.                                 |
@@ -46,10 +46,19 @@ Each User _resource_ should conform to the following structure (AKA schema):
 
 You can find them inside `api/users/model.js`. All of these functions return Promises.
 
+// GET
 - `find` Resolves to the list of users (or empty array).
+
+// GET ID
 - `findById` Takes an `id` and resolves to the user with that id (or null if the id does not exist).
+
+// I THINK PUT
 - `insert` Takes a new user `{ name, bio }` and resolves to the the newly created user `{ id, name, bio }`.
+
+// MAYBE PUT
 - `update` Takes an `id` and an existing user `{ name, bio }` and resolves the updated user `{ id, name, bio}` (or null if the id does not exist).
+
+//DELETE
 - `remove` Takes an `id`  and resolves to the deleted user `{ id, name, bio }`.
 
 #### Endpoint Specifications
